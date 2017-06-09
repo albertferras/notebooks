@@ -1,0 +1,22 @@
+.rendered_html code {
+    color: #673ab7;
+}
+
+div.output_area pre {
+    padding: 8px;
+    border: 1px solid #5cb85c;
+    background-color: rgb(235, 255, 204);
+}
+
+div.output_error pre {
+    border-color: red;
+    background-color: rgb(255, 238, 238);
+}
+
+div.output_stdout::before {
+    content: "Stdout: ";
+}
+
+div.output_error::before {
+    content: "Stderr: ";
+}

@@ -1,0 +1,68 @@
+/* extracted from https://gist.github.com/magican/5574556
+   slightly modified for the selectors of toc-items */
+
+#toc {
+  overflow-y: auto;
+  max-height: 300px;
+  padding: 0px;
+}
+
+#toc ol.toc-item {
+    counter-reset: item;
+    list-style: none;
+    padding: 0.1em;
+}
+
+#toc ol.toc-item  li {
+    display: block;
+}
+
+#toc ol.toc-item li:before {
+    counter-increment: item;
+    content: counters(item, ".")" ";
+}
+
+#toc-wrapper {
+  position: fixed;
+  top: 120px;
+  max-width:260px;
+  right: 20px;
+  border: thin solid rgba(0, 0, 0, 0.38);
+  border-radius: 5px;
+  padding:10px;
+  background-color: #fff;
+  opacity: .8;
+  z-index: 100;
+}
+
+#toc-wrapper.closed {
+  min-width: 100px;
+  width: auto;
+  transition: width;
+}
+#toc-wrapper:hover{
+  opacity: 1;
+}
+#toc-wrapper .header {
+  font-size: 18px;
+  font-weight: bold;
+}
+#toc-wrapper .hide-btn {
+  font-size: 14px;
+  font-family: monospace;
+}
+
+#toc-wrapper .reload-btn {
+  font-size: 14px;
+  font-family: monospace;
+}
+
+
+/* don't waste so much screen space... */
+#toc-wrapper .toc-item{
+  padding-left: 20px;
+}
+
+#toc-wrapper .toc-item .toc-item{
+  padding-left: 10px;
+}
